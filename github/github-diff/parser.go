@@ -9,7 +9,3 @@ func parse() {
 func util() {
 	fmt.Println("utils")
 }
-
-func helper() {
-	fmt.Println("some helper")
-}
