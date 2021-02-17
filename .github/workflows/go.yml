@@ -30,7 +30,7 @@ jobs:
       uses: synopsys-sig/intelligent-security-scan@v1
       with:
       # The server Host URL for Intelligent Scan Engine eg http://localhost:1111 or https://21b7.ngrok.io
-        ioServerUrl: http://synopsyschakrava-aed19ae6.localhost.run
+        ioServerUrl: http://4044594d630d.ngrok.io
         # The server password for Intelligent Scan Engine
         ioServerToken: 55748e69-907b-4998-94eb-cf75323208e9
         # The server Host URL for Intelligent Scan Workflow Engine eg http://localhost:1111 or https://21b7.ngrok.io
