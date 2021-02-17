@@ -124,7 +124,7 @@ function loadWorkflow() {
     echo "$scandate_json"
 	
     header='Authorization: Bearer '$authtoken''
-    scandateresponse=$(curl -X POST -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${header}" -d @scandate.json ${url}/stargazer/api/manifest/update/scandate)
+    scandateresponse=$(curl -X POST -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${header}" -d @scandate.json ${url}/io/api/manifest/update/scandate)
     echo $scandateresponse
 }
 
@@ -173,7 +173,7 @@ function getPrescription() {
     #Yaml to Json Conversion
     echo $(ruby -ryaml -rjson -e "puts JSON.pretty_generate(YAML.safe_load(File.read('merge.yml')))") >>data.json
     echo "Getting Prescription"
-    prescrip=$(curl -X POST -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${header}" -d @data.json ${url}/stargazer/api/manifest/${API})
+    prescrip=$(curl -X POST -H 'Content-Type:application/json' -H 'Accept:application/json' -H "${header}" -d @data.json ${url}/io/api/manifest/${API})
     echo $prescrip
     echo $prescrip >>result.json
 
