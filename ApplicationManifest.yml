@@ -1,0 +1,58 @@
+application:
+  appId: CHAKRAVA-123
+  assetId: IO
+  appName: TEST
+  sdlcType: EDM
+  appType: Webapp
+  webservice: false
+  restApi: false
+  microservice: false
+  projectLanguage: Java
+  frameworks:
+    - Spring security
+    - Hibernate
+  platformVersion: Java 8
+  buildSystem: Maven
+  riskMatrixRevision: Rev1.0
+  sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
+  sensitivePackagePattern: ".*(\\+\\+\\+.*(com\\/mycompany\\/app)).*"
+  fileChangeThreshold: 1
+tool_information:
+  - tool_name: polaris
+    enabled: true
+    fields:
+      project_name: "iq-test-dummy-project"
+      instance_url: "https://internal.polaris.synopsys.com"
+      auth_token: "oj8l70re712vtctfn191d7mno7i60orskg51icsgb11fvglonhag"
+  - tool_name: coverity
+    enabled: true
+    fields:
+      file_path: 'coverity-results.json'
+environment:
+  scm: bitbucket
+  scmOwner: chakravarthy_s_m
+  scmRepositoryName: git-diff-parser
+  scmBranchName: develop
+  bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
+  bitbucketUserName: chakravarthy_s_m
+  bitbucketPassword: Chakra1;'
+  testDeploymentRoot: insecure-bank
+  imChannelIdentifier: "#stargazer-notifications"
+  jiraProjectName: DEV
+  jiraIssuesQuery: project=DEV
+  jiraApiUrl: https://dev-io.atlassian.net/rest/api/latest/
+  jiraUserName: chakra.mithun@gmail.com
+  jiraAuthToken: YWRr4MNp4nQ8Ily6fNMcCC7F  
+connectors:
+  - connector_name: slack
+    fields:
+      channelidentifier: <<SLACK_CHANNEL_ID>>
+      bearertoken: <<SLACK_TOKEN>>
+  - connector_name: jira
+    fields:
+      issuetype: Bug
+      projectkey: <<JIRA_PROJECT_KEY>>
+      assignee: <<JIRA_ASSIGNEE>>
+      url: <<JIRA_SERVER_URL>>
+      username: <<JIRA_USERNAME>>
+      authtoken: <<JIRA_AUTH_TOKEN>>
