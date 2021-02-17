@@ -17,6 +17,7 @@ application:
   sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
   sensitivePackagePattern: ".*(\\+\\+\\+.*(com\\/mycompany\\/app)).*"
   fileChangeThreshold: 1
+
 tool_information:
   - tool_name: polaris
     enabled: true
@@ -28,6 +29,7 @@ tool_information:
     enabled: true
     fields:
       file_path: 'coverity-results.json'
+
 environment:
   scm: bitbucket
   scmOwner: chakravarthy_s_m
@@ -43,6 +45,7 @@ environment:
   jiraApiUrl: https://dev-io.atlassian.net/rest/api/latest/
   jiraUserName: chakra.mithun@gmail.com
   jiraAuthToken: YWRr4MNp4nQ8Ily6fNMcCC7F  
+  
 connectors:
   - connector_name: slack
     fields:
