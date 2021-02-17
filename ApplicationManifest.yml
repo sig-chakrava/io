@@ -27,13 +27,10 @@ tool_information:
       file_path: 'coverity-results.json'
 
 environment:
-  scm: bitbucket
-  scmOwner: chakravarthy_s_m
-  scmRepositoryName: git-diff-parser
-  scmBranchName: develop
-  bitbucketApiUrl: https://api.bitbucket.org/2.0/repositories/
-  bitbucketUserName: chakravarthy_s_m
-  bitbucketPassword: Chakra1;'
+  scm: github
+  scmOwner: sig-chakrava
+  scmRepositoryName: io
+  scmBranchName: master
   testDeploymentRoot: insecure-bank
   imChannelIdentifier: "#stargazer-notifications"
   jiraProjectName: DEV
