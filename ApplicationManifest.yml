@@ -7,15 +7,11 @@ application:
   webservice: false
   restApi: false
   microservice: false
-  projectLanguage: Java
-  frameworks:
-    - Spring security
-    - Hibernate
-  platformVersion: Java 8
-  buildSystem: Maven
+  projectLanguage: Go
+  buildSystem: Go
   riskMatrixRevision: Rev1.0
-  sourceFilePattern: ".*\\+\\+\\+.*(\\.java|\\.jsp)+.*"
-  sensitivePackagePattern: ".*(\\+\\+\\+.*(com\\/mycompany\\/app)).*"
+  sourceFilePattern: ".*(.go)"
+  sensitivePackagePattern: ".*(.go)"
   fileChangeThreshold: 1
 
 tool_information:
@@ -45,7 +41,7 @@ environment:
   jiraApiUrl: https://dev-io.atlassian.net/rest/api/latest/
   jiraUserName: chakra.mithun@gmail.com
   jiraAuthToken: YWRr4MNp4nQ8Ily6fNMcCC7F  
-  
+
 connectors:
   - connector_name: slack
     fields:
