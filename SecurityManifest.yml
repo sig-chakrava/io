@@ -3,7 +3,7 @@ security:
   pipeline:
     type: "Inline"
     toolchain: "Synopsys"
-  activities:
+  activities: 
     sast:
       rescanThreshold: 10
     sca:
@@ -13,8 +13,6 @@ security:
     sastplusm:
       rescanThreshold: 10
     dastplusm:
-      rescanThreshold: 10
-    imageScan:
       rescanThreshold: 10
 ---
 buildBreaker:
