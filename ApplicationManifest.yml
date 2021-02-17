@@ -27,13 +27,6 @@ tool_information:
       file_path: 'coverity-results.json'
 
 environment:
-  scm: github
-  scmOwner: sig-chakrava
-  scmRepositoryName: io
-  scmBranchName: master
-  githubApiUrl: https://api.github.com
-  githubUsername: sig-chakrava
-  githubToken: 636688065f91e0c89317aa3dd2a4f7e715e63e49
   testDeploymentRoot: insecure-bank
   imChannelIdentifier: "#stargazer-notifications"
   jiraProjectName: DEV
