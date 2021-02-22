@@ -28,7 +28,7 @@ jobs:
       run: |
         export POLARIS_SERVER_URL=${{secrets.POLARIS_SERVER_URL}}
         export POLARIS_ACCESS_TOKEN=${{secrets.POLARIS_ACCESS_TOKEN}}
-        wget -q https://dev01.dev.polaris.synopsys.com/api/tools/polaris_cli-linux64.zip
+        ping dev01.dev.polaris.synopsys.com
 
     - name: Synopsys Intelligent Security Scan
      # if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
