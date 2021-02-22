@@ -1,0 +1,83 @@
+[Go/build] 🚀  Start image=nektos/act-environments-ubuntu:18.04
+[Go/build]   🐳  docker pull nektos/act-environments-ubuntu:18.04
+[Go/build]   🐳  docker create image=nektos/act-environments-ubuntu:18.04 entrypoint=["/usr/bin/tail" "-f" "/dev/null"] cmd=[]
+[Go/build] Created container name=act-Go-build id=ead65d8dc63fb0c3109a8dd405511fa0c8a4c212118475aeb5d85bd85b4701a3 from image nektos/act-environments-ubuntu:18.04
+[Go/build] ENV ==> [RUNNER_TOOL_CACHE=/opt/hostedtoolcache RUNNER_OS=Linux RUNNER_TEMP=/tmp]
+[Go/build]   🐳  docker run image=nektos/act-environments-ubuntu:18.04 entrypoint=["/usr/bin/tail" "-f" "/dev/null"] cmd=[]
+[Go/build] Starting container: ead65d8dc63fb0c3109a8dd405511fa0c8a4c212118475aeb5d85bd85b4701a3
+[Go/build] Started container: ead65d8dc63fb0c3109a8dd405511fa0c8a4c212118475aeb5d85bd85b4701a3
+[Go/build]   🐳  docker cp src=/mnt/c/work/src/cicd/io/. dst=/github/workspace
+[Go/build] Exec command '[mkdir -p /github/workspace]'
+[Go/build] Extracting content from '/tmp/act112968579' to '/github/workspace'
+[Go/build] Extracting content to '/github/'
+[Go/build] ⭐  Run actions/checkout@v2
+[Go/build] Skipping actions/checkout
+[Go/build]   ✅  Success - actions/checkout@v2
+[Go/build] ⭐  Run IO Scan
+[Go/build]   ☁  git clone 'https://github.com/sig-chakrava/io-scan' # ref=v1-beta.4
+[Go/build]   cloning https://github.com/sig-chakrava/io-scan to /home/chakrava/.cache/act/sig-chakrava-io-scan@v1-beta.4
+[Go/build] Cloned https://github.com/sig-chakrava/io-scan to /home/chakrava/.cache/act/sig-chakrava-io-scan@v1-beta.4
+[Go/build] Checked out v1-beta.4
+[Go/build]   🐳  docker cp src=/home/chakrava/.cache/act/sig-chakrava-io-scan@v1-beta.4 dst=/actions/
+[Go/build] Exec command '[mkdir -p /actions/]'
+[Go/build] Extracting content from '/tmp/act283212550' to '/actions/'
+[Go/build] Exec command '[node /actions/sig-chakrava-io-scan@v1-beta.4/index.js]'
+[Go/build]   | Triggering prescription
+[Go/build]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[Go/build]   |                                  Dload  Upload   Total   Spent    Left  Speed
+[Go/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0 23 10063   23  2371    0     0   1951      0  0:00:05  0:00:01  0:00:04  1951100 10063  100 10063    0     0   8275      0  0:00:01  0:00:01 --:--:--  8275
+[Go/build]   | 
+[Go/build]   | +---------------------------------------------------------------------------+
+[Go/build]   | | Synopsys Intelligent Security Scan                                     |
+[Go/build]   | | Copyright Â© 2016-2020 Synopsys, Inc. All rights reserved worldwide.    |
+[Go/build]   | +---------------------------------------------------------------------------+
+[Go/build]   | 
+[Go/build]   | 
+[Go/build]   | 
+[Go/build]   | ******************************
+[Go/build]   | * Current Stage is set to IO *
+[Go/build]   | ******************************
+[Go/build]   | 
+[Go/build]   | Inside Prescription local
+[Go/build]   | --IO.url=http://7f21b2c0a801.ngrok.io:80 --IO.token=55748e69-907b-4998-94eb-cf75323208e9 --app.manifest.path=ApplicationManifest.yml --sec.manifest.path=SecurityManifest.yml --stage=IO --workflow.version=2020.09.01
+[Go/build]   | 1
+[Go/build]   | 2
+[Go/build]   | 3
+[Go/build]   | 4
+[Go/build]   | ApplicationManifest.yml
+[Go/build]   | SecurityManifest.yml
+[Go/build]   | 5
+[Go/build]   | 6
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | 7
+[Go/build]   | Getting Prescription
+[Go/build]   |   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+[Go/build]   |                                  Dload  Upload   Total   Spent    Left  Speed
+[Go/build]   |   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0  0  2014    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0100  2014    0     0  100  2014      0    693  0:00:02  0:00:02 --:--:--   693100  2014    0     0  100  2014      0    515  0:00:03  0:00:03 --:--:--   515100  2014    0     0  100  2014      0    410  0:00:04  0:00:04 --:--:--   410100  3013    0   999  100  2014    192    388  0:00:05  0:00:05 --:--:--   627
+[Go/build]   | 8
+[Go/build]   | {"application":{"appId":"CHAKRAVA-123","assetId":"IO","appName":"Test app 1","microservice":false,"buildSystem":"Go","projectLanguage":"Go","riskMatrixRevision":"Rev1.0","sourceFilePattern":".*(.go)","sensitivePackagePattern":".*(.go)","fileChangeThreshold":1},"security":{"pipeline":{"type":"Inline","toolchain":"Synopsys"},"activities":{"sast":{"enabled":true,"lastScanDate":"2021-02-16","rescanThreshold":10},"sca":{"enabled":true,"lastScanDate":"2021-02-16","rescanThreshold":10},"dast":{"enabled":true,"lastScanDate":"2021-02-16","rescanThreshold":10},"sastplusm":{"enabled":true,"lastScanDate":null,"rescanThreshold":30},"dastplusm":{"enabled":true,"lastScanDate":null,"rescanThreshold":30},"imageScan":{"enabled":true,"lastScanDate":"","rescanThreshold":10}}},"riskScoreCard":{"bizCriticalityScore":"Critical/10.0","dataClassScore":"Restricted/11.25","accessScore":"Internet/15.0","openVulnScore":"Low/1.0","changeSignificanceScore":"Critical/40.0","toolingScore":"2.0","trainingScore":null}}
+[Go/build]   | 9
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   ⚙  ::set-output:: sastScan=true
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   ⚙  ::set-output:: scaScan=true
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:10: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:29: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   | /usr/lib/ruby/vendor_ruby/rubygems/defaults/operating_system.rb:30: warning: constant Gem::ConfigMap is deprecated
+[Go/build]   ⚙  ::set-output:: dastScan=true
+[Go/build]   | 10
+[Go/build]   | Cleaning Up
+[Go/build]   ✅  Success - IO Scan
+[Go/build] Removed container: ead65d8dc63fb0c3109a8dd405511fa0c8a4c212118475aeb5d85bd85b4701a3
+[Go/build]   🐳  docker volume rm act-Go-build

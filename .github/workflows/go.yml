@@ -22,7 +22,6 @@ jobs:
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
         prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
-        additionalWorkflowArgs: "--persona=developer"
         
     - name: Static Analysis with Polaris
      # if: ${{steps.prescription.outputs.sastScan == 'true'}}
