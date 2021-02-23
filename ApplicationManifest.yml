@@ -18,7 +18,7 @@ tool_information:
   - tool_name: polaris
     enabled: true
     fields:
-      project_name: "IO-Github"
+      project_name: "sig-chakrava/io"
       instance_url: "https://sipse.polaris.synopsys.com"
       auth_token: "bq8vli63ad27rf8ot34lip9tti4fs47t970c0nbgknkamoohfs20"
   - tool_name: coverity
