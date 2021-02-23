@@ -33,6 +33,15 @@ jobs:
         unzip -j polaris_cli-linux64.zip -d /tmp
         /tmp/polaris analyze -w
 
+    - name: Software Composition Analysis with Black Duck
+     # if: ${{steps.prescription.outputs.scaScan == 'true' }}
+      uses: blackducksoftware/github-action@v2
+      with:
+         args: '--blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_TOKEN}}" --detect.tools="DETECTOR"'
+         
+
+
+
     - name: Synopsys Intelligent Security Scan
      # if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
       uses: synopsys-sig/intelligent-security-scan@v1
