@@ -23,6 +23,13 @@ jobs:
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
         prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
+        
+    - name: Static Analysis with Polaris
+     # if: ${{steps.prescription.outputs.sastScan == 'true'}}
+      run: |
+        cov-configure --go
+        cov-capture --dir idir --project-dir .
+        cov-analyze --dir idir
 
     - name: Synopsys Intelligent Security Scan
      # if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
