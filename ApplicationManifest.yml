@@ -18,9 +18,9 @@ tool_information:
   - tool_name: polaris
     enabled: true
     fields:
-      project_name: "iq-test-dummy-project"
-      instance_url: "https://internal.polaris.synopsys.com"
-      auth_token: "oj8l70re712vtctfn191d7mno7i60orskg51icsgb11fvglonhag"
+      project_name: "IO-Github"
+      instance_url: "https://sipse.polaris.synopsys.com"
+      auth_token: "bq8vli63ad27rf8ot34lip9tti4fs47t970c0nbgknkamoohfs20"
   - tool_name: coverity
     enabled: true
     fields:
