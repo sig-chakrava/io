@@ -28,7 +28,7 @@ jobs:
      # if: ${{steps.prescription.outputs.sastScan == 'true'}}
       run: |
         echo $PATH
-        /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-configure --go
+        /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-configure --java
         pwd
         ls
         /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-build --dir idir mvn clean install
