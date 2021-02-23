@@ -29,7 +29,8 @@ jobs:
       run: |
         echo $PATH
         /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-configure --go
-        echo pwd
+        pwd
+        ls
         /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-capture --dir idir --project-dir .
         /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-manage-emit --dir idir list-json
         /home/chakrava/cov-analysis-linux64-2020.06/bin/cov-analyze --dir idir
