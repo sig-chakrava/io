@@ -9,9 +9,10 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
+    
     - name: IO Scan
       uses: sig-chakrava/io-scan@v1-beta.4
       with:
@@ -22,13 +23,6 @@ jobs:
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
         prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
-        
-    - name: Static Analysis with Polaris
-     # if: ${{steps.prescription.outputs.sastScan == 'true'}}
-      run: |
-        export POLARIS_SERVER_URL=${{secrets.POLARIS_SERVER_URL}}
-        export POLARIS_ACCESS_TOKEN=${{secrets.POLARIS_ACCESS_TOKEN}}
-        ping dev01.dev.polaris.synopsys.com
 
     - name: Synopsys Intelligent Security Scan
      # if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
@@ -36,6 +30,7 @@ jobs:
       with:
         ioServerHost: ${{secrets.IO_SERVER_URL}}
         ioServerPort:  80
+        ioServerURL: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
