@@ -10,6 +10,8 @@ application:
   projectLanguage: Go
   buildSystem: Go
   riskMatrixRevision: Rev1.0
+  sourceFilePattern: ".*(.java)"
+  sensitivePackagePattern: ".*(.xml)"
   fileChangeThreshold: 1
 
 tool_information:
