@@ -1,0 +1,94 @@
+application:
+  appId: CHAKRAVA-123
+  assetId: IO
+  appName: TEST
+  sdlcType: EDM
+  appType: Webapp
+  webservice: false
+  restApi: false
+  microservice: false
+  projectLanguage: Go
+  buildSystem: Go
+  riskMatrixRevision: Rev1.0
+  fileChangeThreshold: 1
+
+tool_information:
+  - tool_name: polaris
+    enabled: true
+    fields:
+      project_name: "sig-chakrava/io"
+      instance_url: "https://sipse.polaris.synopsys.com"
+      auth_token: "bq8vli63ad27rf8ot34lip9tti4fs47t970c0nbgknkamoohfs20"
+  - tool_name: coverity
+    enabled: true
+    fields:
+      file_path: 'coverity-results.json'
+
+environment:
+  scm: github
+  scmOwner: sig-chakrava
+  scmRepositoryName: io
+  scmBranchName: master
+  githubApiUrl: https://api.github.com/repos
+  githubUsername: sig-chakrava
+  githubToken: 636688065f91e0c89317aa3dd2a4f7e715e63e49
+  testDeploymentRoot: "insecure-bank"
+  imChannelIdentifier: "#stargazer-notifications"
+  jiraProjectName: "DEV"
+  jiraIssuesQuery: "project=DEV"
+  jiraApiUrl: "https://dev-io.atlassian.net/rest/api/latest"
+  jiraUserName: "chakra.mithun@gmail.com"
+  jiraAuthToken: YWRr4MNp4nQ8Ily6fNMcCC7F
+
+connectors:
+  - connector_name: slack
+    fields:
+      channelidentifier: <<SLACK_CHANNEL_ID>>
+      bearertoken: <<SLACK_TOKEN>>
+  - connector_name: jira
+    fields:
+      issuetype: Bug
+      projectkey: <<JIRA_PROJECT_KEY>>
+      assignee: <<JIRA_ASSIGNEE>>
+      url: <<JIRA_SERVER_URL>>
+      username: <<JIRA_USERNAME>>
+      authtoken: <<JIRA_AUTH_TOKEN>>
+
+security:
+  pipeline:
+    type: "Inline"
+    toolchain: "Synopsys"
+  activities:
+    sast:
+      rescanThreshold: 10
+    sca:
+      rescanThreshold: 10
+    dast:
+      rescanThreshold: 10
+    sastplusm:
+      rescanThreshold: 10
+    dastplusm:
+      rescanThreshold: 10
+    imageScan:
+      rescanThreshold: 10
+
+buildBreaker:
+  coverity:
+    statusQuery: "new"
+    overallSeverityQuery: "high"
+    categoryQuery: "cross-site scripting"
+    categorySeverityQuery: "medium"
+  blackduck:
+    statusQuery: "new"
+    overallSeverityQuery: "medium"
+    cveQuery: ""
+    componentQuery: ""
+  seeker:
+    statusQuery: "new"
+    overallSeverityQuery: "critical"
+    categoryQuery: "SQL Injection"
+    categorySeverityQuery: "high"
+sct:
+  enableJira: "true"
+  jiraIssueType: "Bug"
+  enableBuildBreaker: "true"
