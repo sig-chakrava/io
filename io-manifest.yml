@@ -20,7 +20,7 @@ tool_information:
     fields:
       project_name: "sig-chakrava/io"
       instance_url: "https://sipse.polaris.synopsys.com"
-      auth_token: "bq8vli63ad27rf8ot34lip9tti4fs47t970c0nbgknkamoohfs20"
+      auth_token: "cfhed2gaq545986h956r6s0d4q62flig426ipk5lo00jubpcdbj0"
 
 environment:
   scm: github
@@ -36,7 +36,7 @@ environment:
   jiraIssuesQuery: "project=DEV"
   jiraApiUrl: "https://dev-io.atlassian.net/rest/api/latest"
   jiraUserName: "chakra.mithun@gmail.com"
-  jiraAuthToken: YWRr4MNp4nQ8Ily6fNMcCC7F
+  jiraAuthToken: r52PEi9HzS0S8CcdeysZB96F
 
 connectors:
   - connector_name: slack
