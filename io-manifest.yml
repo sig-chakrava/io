@@ -29,7 +29,7 @@ environment:
   scmBranchName: master
   githubApiUrl: https://api.github.com/repos
   githubUsername: sig-chakrava
-  githubToken: a3a00d4629110d9f195a595d4936835af0acd6b6
+  githubToken: "FAKE"
   testDeploymentRoot: "insecure-bank"
   imChannelIdentifier: "#stargazer-notifications"
   jiraProjectName: "DEV"
