@@ -43,6 +43,9 @@ connectors:
     fields:
       channelidentifier: <<SLACK_CHANNEL_ID>>
       bearertoken: <<SLACK_TOKEN>>
+  - connector_name: github
+    fields:
+      file_path: "github-sarif-report.json"
   - connector_name: jira
     fields:
       issuetype: Bug
