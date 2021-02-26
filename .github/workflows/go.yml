@@ -51,7 +51,7 @@ jobs:
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
         prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
-        additionalWorkflowArgs: "github_access_token=${{secrets.GITHUB_ACCESS_TOKEN}}"
+        additionalWorkflowArgs: "github_access_token=${{secrets.GH_ATOKEN}}"
         stage: "WORKFLOW"
 
     - name: Upload SARIF file
