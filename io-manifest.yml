@@ -15,12 +15,12 @@ application:
   fileChangeThreshold: 1
 
 tool_information:
-  - tool_name: blackduck
+  - tool_name: polaris
     enabled: true
     fields:
-      project_name: "Polaris CLI"
-      instance_url: "https://sig-bd-hub.internal.synopsys.com/"
-      auth_token: "ZjFiMDVlNDctMWFhMC00ODc0LThhN2ItZDZhZjg1ZTUyZDkyOjY4OGQzMDg1LWFjNjUtNGM3Yi04YTU2LWVlMWEyMTI2Y2FkNQ=="
+      project_name: "sig-chakrava/io"
+      instance_url: "https://sipse.polaris.synopsys.com"
+      auth_token: "so2mqphfpl72v1njf0m2tpnb02hgfvf9c6usvon4u102s9oadpng"
 
 environment:
   scm: github
