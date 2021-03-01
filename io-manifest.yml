@@ -18,8 +18,9 @@ tool_information:
   - tool_name: blackduck
     enabled: true
     fields:
-      instance_url: "https://rp-blackduck.internal.synopsys.com"
-      auth_token: "OTMzYjI1NDMtZWVmNS00MDZlLWE3MDUtMDEzNzVlMTljY2FjOmQwYWM3Y2NmLTUyOGQtNDg5Ny05MjIzLTAzY2MyMWVjNDU4NQ=="
+      project_name: "Polaris CLI"
+      instance_url: "https://sig-bd-hub.internal.synopsys.com/"
+      auth_token: "ZjFiMDVlNDctMWFhMC00ODc0LThhN2ItZDZhZjg1ZTUyZDkyOjY4OGQzMDg1LWFjNjUtNGM3Yi04YTU2LWVlMWEyMTI2Y2FkNQ=="
 
 environment:
   scm: github
