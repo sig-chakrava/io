@@ -36,7 +36,7 @@ environment:
   jiraIssuesQuery: "project=DEV"
   jiraApiUrl: "https://dev-io.atlassian.net/rest/api/latest"
   jiraUserName: "chakra.mithun@gmail.com"
-  jiraAuthToken: r52PEi9HzS0S8CcdeysZB96F
+  jiraAuthToken: K059mXVApPA727Z2gJxH7F95
 
 connectors:
   - connector_name: slack
