@@ -1,0 +1,54 @@
+name: Go
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: IO Scan
+      id: prescription
+      uses: sig-chakrava/io-scan@ac9229dba18a4ad1be231e9bf75d870f42342cae 
+      with:
+        stage: "IO"
+        ioServerHost: ${{secrets.IO_SERVER_URL}}
+        ioServerPort:  80
+        ioServerToken: ${{secrets.IO_SERVER_TOKEN}}        
+        workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
+        workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
+        prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
+
+    - name: Software Composition Analysis with Black Duck
+      if: ${{steps.prescription.outputs.scaScan == 'true' }}
+      uses: blackducksoftware/github-action@v2
+      with:
+         args: '--blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_TOKEN}}" --detect.tools="DETECTOR"'
+         
+
+    - name: Synopsys Intelligent Security Scan
+      if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
+      uses: sig-chakrava/io-scan@ac9229dba18a4ad1be231e9bf75d870f42342cae
+      with:
+        ioServerHost: ${{secrets.IO_SERVER_URL}}
+        ioServerPort:  80
+        ioServerURL: ${{secrets.IO_SERVER_URL}}
+        ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
+        workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
+        workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
+        prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
+        additionalWorkflowArgs: "github_access_token=${{secrets.GH_ATOKEN}}"
+        stage: "WORKFLOW"
+
+    - name: Upload SARIF file
+     # if: ${{steps.prescription.outputs.sastScan == 'true' }}
+      uses: github/codeql-action/upload-sarif@v1
+      with:
+        # Path to SARIF file relative to the root of the repository
+        sarif_file: github-sarif-report.json
