@@ -18,8 +18,7 @@ jobs:
       uses: sig-chakrava/io-scan@ac9229dba18a4ad1be231e9bf75d870f42342cae 
       with:
         stage: "IO"
-        ioServerHost: ${{secrets.IO_SERVER_URL}}
-        ioServerPort:  80
+        ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}        
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
         workflowServerToken: ${{secrets.WORKFLOW_SERVER_TOKEN}}
@@ -46,8 +45,6 @@ jobs:
       if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
       uses: sig-chakrava/io-scan@ac9229dba18a4ad1be231e9bf75d870f42342cae
       with:
-        ioServerHost: ${{secrets.IO_SERVER_URL}}
-        ioServerPort:  80
         ioServerURL: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
