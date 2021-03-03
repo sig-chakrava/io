@@ -14,14 +14,6 @@ application:
   sensitivePackagePattern: ".*(.xml)"
   fileChangeThreshold: 1
 
-tool_information:
-  - tool_name: polaris
-    enabled: true
-    fields:
-      project_name: "sig-chakrava/io"
-      instance_url: "https://sipse.polaris.synopsys.com"
-      auth_token: "so2mqphfpl72v1njf0m2tpnb02hgfvf9c6usvon4u102s9oadpng"
-
 environment:
   scm: github
   scmOwner: sig-chakrava
@@ -29,14 +21,14 @@ environment:
   scmBranchName: master
   githubApiUrl: https://api.github.com/repos
   githubUsername: sig-chakrava
-  githubToken: "d6019c1971a9491208c0a2f69d92a7e71769bc28"
+  githubToken: "dummy"
   testDeploymentRoot: "insecure-bank"
   imChannelIdentifier: "#stargazer-notifications"
   jiraProjectName: "DEV"
   jiraIssuesQuery: "project=DEV"
   jiraApiUrl: "https://dev-io.atlassian.net/rest/api/latest"
   jiraUserName: "chakra.mithun@gmail.com"
-  jiraAuthToken: K059mXVApPA727Z2gJxH7F95
+  jiraAuthToken: dummy
 
 connectors:
   - connector_name: slack
