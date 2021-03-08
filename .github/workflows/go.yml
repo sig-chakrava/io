@@ -9,7 +9,7 @@ on:
 jobs:
 
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
     - uses: actions/checkout@v2
     
@@ -21,6 +21,7 @@ jobs:
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}        
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
+        prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
         additionalWorkflowArgs: "--polaris.url=${{secrets.POLARIS_SERVER_URL}} --github.token=${{secrets.GH_ATOKEN}} --polaris.project.name=sig-chakrava/io --polaris.token=${{secrets.POLARIS_ACCESS_TOKEN}} --jira.auth.token=${{secrets.JIRA_TOKEN}} --sensitive.package.pattern='.*(.xml)' --jira.project.name=DEV --jira.api.url=https://dev-io.atlassian.net/rest/api/latest --jira.username=chakra.mithun@gmail.com --jira.issues.query=project=DEV --blackduck.project.name=io --blackduck.url=https://int-hub04.dc1.lan --blackduck.api.token=${{secrets.BLACKDUCK_TOKEN}}"
 
     - name: Static Analysis with Polaris
@@ -36,7 +37,6 @@ jobs:
       if: ${{steps.prescription.outputs.scaScan == 'true' }}
       uses: blackducksoftware/github-action@v2
       with:
-         prescriptionData: ${{steps.prescription.outputs}}
          args: '--blackduck.url="${{ secrets.BLACKDUCK_URL}}" --blackduck.api.token="${{ secrets.BLACKDUCK_TOKEN}}" --detect.tools="DETECTOR" --blackduck.trust.cert=true'
          
 
@@ -47,6 +47,7 @@ jobs:
         ioServerURL: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
         workflowServerUrl: ${{secrets.WORKFLOW_SERVER_URL}}
+        prescriptionDownloadURL: ${{secrets.PRESCRIPTION_DOWNLOAD_URL}}
         additionalWorkflowArgs: "github_access_token=${{secrets.GH_ATOKEN}}"
         stage: "WORKFLOW"
 
