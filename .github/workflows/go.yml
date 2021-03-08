@@ -15,7 +15,7 @@ jobs:
     
     - name: IO Scan
       id: prescription
-      uses: sig-chakrava/io-scan@ac9229dba18a4ad1be231e9bf75d870f42342cae 
+      uses: synopsys-sig/intelligent-security-scan@48eedfcd42bc342a294dc495ac452797b2d9ff08
       with:
         stage: "IO"
         ioServerUrl: ${{secrets.IO_SERVER_URL}}
@@ -42,7 +42,7 @@ jobs:
 
     - name: Synopsys Intelligent Security Scan
       if: ${{steps.prescription.outputs.sastScan == 'true' || steps.prescription.outputs.scaScan == 'true'}}
-      uses: sig-chakrava/io-scan@ac9229dba18a4ad1be231e9bf75d870f42342cae
+      uses: synopsys-sig/intelligent-security-scan@48eedfcd42bc342a294dc495ac452797b2d9ff08
       with:
         ioServerURL: ${{secrets.IO_SERVER_URL}}
         ioServerToken: ${{secrets.IO_SERVER_TOKEN}}
